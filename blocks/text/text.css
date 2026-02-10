@@ -1,0 +1,20 @@
+.text {
+  padding: 24px;
+}
+
+.text p {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+/* yellow variant — pale yellow background, dark blue bold text */
+.text.yellow {
+  background-color: #fef9e7;
+  border-left: 4px solid #c89600;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.text.yellow strong {
+  color: #1b3a5c;
+}
