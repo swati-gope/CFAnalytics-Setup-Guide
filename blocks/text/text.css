@@ -7,37 +7,70 @@
   margin-bottom: 0.25em;
 }
 
-/* yellow variant — pale yellow background, dark blue bold text */
+/* yellow / warning variant — amber background, gold left border */
 .text.yellow {
-  background-color: #fef9e7;
-  border-left: 4px solid #c89600;
-  border-radius: 8px;
-  padding: 24px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 5px;
+  padding: 15px 20px;
 }
 
 .text.yellow strong {
-  color: #1b3a5c;
+  color: #1f4788;
 }
 
-/* green variant — pale green background, dark blue bold text, dark green left border */
+/* green / success variant — light green background, green left border */
 .text.green {
-  background-color: #e8f5e9;
-  border-left: 4px solid #2e7d32;
-  border-radius: 8px;
-  padding: 24px;
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  border-radius: 5px;
+  padding: 15px 20px;
 }
 
 .text.green strong {
-  color: #1b3a5c;
+  color: #1f4788;
 }
 
-/* code variant — grey background, red text */
+/* info variant — light blue background, teal left border */
+.text.info {
+  background-color: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+  border-radius: 5px;
+  padding: 15px 20px;
+}
+
+.text.info strong {
+  color: #1f4788;
+}
+
+/* checklist variant — light grey background, green left border */
+.text.checklist {
+  background-color: #f9f9f9;
+  border-left: 4px solid #4caf50;
+  border-radius: 5px;
+  padding: 15px 20px;
+}
+
+.text.checklist strong {
+  color: #1f4788;
+}
+
+/* code variant — light grey background, monospace font */
 .text.code {
-  background-color: #e8e8e8;
-  color: #c00;
-  border-radius: 8px;
-  padding: 24px;
-  font-family: var(--fixed-font-family, 'Roboto Mono', monospace);
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 16px;
+  font-family: var(--fixed-font-family, 'Courier New', monospace);
+  font-size: var(--body-font-size-xs, 13px);
+  line-height: 1.4;
   overflow-x: auto;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  color: #c7254e;
+}
+
+.text.code p {
+  margin: 0;
+  line-height: 1.4;
 }
