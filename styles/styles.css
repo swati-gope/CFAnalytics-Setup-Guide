@@ -196,7 +196,7 @@ pre {
   padding: 16px;
   overflow-x: auto;
   white-space: pre-wrap;
-  word-wrap: break-word;
+  word-wrap: overflow-wrap;
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-xs);
   line-height: 1.4;
