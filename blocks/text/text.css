@@ -18,3 +18,15 @@
 .text.yellow strong {
   color: #1b3a5c;
 }
+
+/* green variant — pale green background, dark blue bold text, dark green left border */
+.text.green {
+  background-color: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.text.green strong {
+  color: #1b3a5c;
+}
