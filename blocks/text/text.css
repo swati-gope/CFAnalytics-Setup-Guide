@@ -7,37 +7,33 @@
   margin-bottom: 0.25em;
 }
 
-/* yellow variant — pale yellow background, dark blue bold text */
+/* yellow variant — warning callout */
 .text.yellow {
-  background-color: #fef9e7;
-  border-left: 4px solid #c89600;
-  border-radius: 8px;
-  padding: 24px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 0;
+  padding: 15px;
 }
 
-.text.yellow strong {
-  color: #1b3a5c;
-}
-
-/* green variant — pale green background, dark blue bold text, dark green left border */
+/* green variant — success callout */
 .text.green {
-  background-color: #e8f5e9;
-  border-left: 4px solid #2e7d32;
-  border-radius: 8px;
-  padding: 24px;
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  border-radius: 0;
+  padding: 15px;
 }
 
-.text.green strong {
-  color: #1b3a5c;
-}
-
-/* code variant — grey background, red text */
+/* code variant — code block styling */
 .text.code {
-  background-color: #e8e8e8;
-  color: #c00;
-  border-radius: 8px;
-  padding: 24px;
-  font-family: var(--fixed-font-family, 'Roboto Mono', monospace);
+  background-color: #f8f8f8;
+  color: #c7254e;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.4;
   overflow-x: auto;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
