@@ -45,6 +45,53 @@ async function loadFonts() {
 }
 
 /**
+ * Converts inline <table> elements whose header matches a block name
+ * (e.g. "text (code)") into proper block divs so they get decorated.
+ * Tables nested inside lists aren't recognized as blocks by the platform.
+ * @param {Element} main The container element
+ */
+function buildInlineBlocks(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    const rows = table.querySelectorAll(':scope tbody tr');
+    if (rows.length < 2) return;
+
+    const headerCell = rows[0].querySelector('td');
+    if (!headerCell) return;
+
+    // Parse header like "text (code)" or "text(code)" into block name + variant
+    const raw = headerCell.textContent.trim().toLowerCase();
+    const match = raw.match(/^(\w[\w-]*)\s*\(([^)]+)\)$/);
+    if (!match) return;
+
+    const [, blockName, variant] = match;
+
+    // Build a proper block div with variant class
+    const block = document.createElement('div');
+    block.className = `${blockName} ${variant.trim()}`;
+    const row = document.createElement('div');
+    const cell = document.createElement('div');
+
+    for (let i = 1; i < rows.length; i += 1) {
+      const td = rows[i].querySelector('td');
+      if (td) {
+        if (td.children.length) {
+          [...td.children].forEach((child) => cell.append(child.cloneNode(true)));
+        } else {
+          // td contains only text nodes — wrap in a <p>
+          const p = document.createElement('p');
+          p.textContent = td.textContent;
+          cell.append(p);
+        }
+      }
+    }
+
+    row.append(cell);
+    block.append(row);
+    table.replaceWith(block);
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -68,6 +115,7 @@ function buildAutoBlocks(main) {
       });
     }
 
+    buildInlineBlocks(main);
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console

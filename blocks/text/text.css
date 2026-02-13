@@ -30,3 +30,14 @@
 .text.green strong {
   color: #1b3a5c;
 }
+
+/* code variant — grey background, red text */
+.text.code {
+  background-color: #e8e8e8;
+  color: #c00;
+  border-radius: 8px;
+  padding: 24px;
+  font-family: var(--fixed-font-family, 'Roboto Mono', monospace);
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
